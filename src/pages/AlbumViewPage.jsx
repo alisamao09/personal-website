@@ -133,8 +133,59 @@ const albums = [
         src: `${import.meta.env.BASE_URL}assets/photos/NYC/photo4.jpg`,
       }
     ]
-  }
-  // ... add all your other albums with their photos
+  },
+  {
+    id: 3,
+    location: 'San Francisco',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/SF/cover.jpg`,
+    photos: [
+      {
+        id: 1,
+        src: `${import.meta.env.BASE_URL}assets/photos/SF/cover.jpg`,
+      },
+      {
+        id: 2,
+        src: `${import.meta.env.BASE_URL}assets/photos/SF/photo1.jpg`,
+      },
+      {
+        id: 3,
+        src: `${import.meta.env.BASE_URL}assets/photos/SF/photo2.jpg`,
+      }
+    ]
+  },
+  {
+    id: 4,
+    location: 'Seattle',
+    date: '2023-2024',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/SEA/cover.jpg`,
+    photos: [
+      // Add all Seattle photos
+    ]
+  },
+  {
+    id: 5,
+    location: 'Toronto',
+    date: '2017-2024',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/toronto/cover.jpg`,
+    photos: [
+      // Add all Toronto photos
+    ]
+  },
+  // Add all other albums:
+  // - Austin
+  // - Bay Area
+  // - Boston
+  // - Chicago
+  // - Colorado
+  // - Detroit
+  // - Los Angeles
+  // - Monterey
+  // - Portland
+  // - Utah
+  // - Vancouver
+  // - Las Vegas
+  // - Washington DC
 ];
 
 function AlbumViewPage() {
