@@ -80,34 +80,13 @@ const albums = [
     date: '2024',
     coverImage: `${import.meta.env.BASE_URL}assets/photos/AZ/cover.jpg`,
     photos: [
-      {
-        id: 1,
-        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo1.jpg`,
-      },
-      {
-        id: 2,
-        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo2.jpg`,
-      },
-      {
-        id: 3,
-        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo3.jpg`,
-      },
-      {
-        id: 4,
-        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo4.jpg`,
-      },
-      {
-        id: 5,
-        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo5.jpg`,
-      },
-      {
-        id: 6,
-        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo6.jpg`,
-      },
-      {
-        id: 7,
-        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo7.jpg`,
-      }
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo1.jpg` },
+      { id: 2, src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo2.jpg` },
+      { id: 3, src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo3.jpg` },
+      { id: 4, src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo4.jpg` },
+      { id: 5, src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo5.jpg` },
+      { id: 6, src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo6.jpg` },
+      { id: 7, src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo7.jpg` }
     ]
   },
   {
