@@ -15,7 +15,7 @@ const BackgroundContainer = styled.div`
     rgba(18, 18, 18, 0.7),
     rgba(18, 18, 18, 0.7)
   ),
-  url('/personal-website/assets/background.jpg');
+  url('https://alisamao09.github.io/personal-website/assets/background.jpg');
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
@@ -96,7 +96,7 @@ function HomePage() {
         <MainContent>
           <ProfileImage>
             <Image 
-              src={`${import.meta.env.BASE_URL}assets/profile.jpg`}
+              src="https://alisamao09.github.io/personal-website/assets/profile.jpg"
               alt="Jiangyue Mao" 
               loading="eager"
             />
