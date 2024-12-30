@@ -302,17 +302,25 @@ const albums = [
   }
 ];
 
+function formatLocationForUrl(location) {
+  return location
+    .toLowerCase()
+    .replace(/\s+/g, '-')     // Replace spaces with hyphens
+    .replace(/[^a-z0-9-]/g, ''); // Remove special characters
+}
+
 function AlbumViewPage() {
   const { location } = useParams();
   const navigate = useNavigate();
 
   console.log('URL location:', location); // Add this for debugging
 
-  // Update the find logic to handle spaces and special characters
+  // Update the find logic
   const album = albums.find(a => {
-    const normalizedAlbumLocation = a.location.toLowerCase().replace(/\s+/g, '-');
-    const normalizedUrlLocation = location.toLowerCase().replace(/\s+/g, '-');
-    console.log('Comparing:', normalizedAlbumLocation, 'with', normalizedUrlLocation); // Debug
+    const normalizedAlbumLocation = formatLocationForUrl(a.location);
+    const normalizedUrlLocation = formatLocationForUrl(location);
+    console.log('Looking for:', normalizedUrlLocation);
+    console.log('Comparing with:', normalizedAlbumLocation);
     return normalizedAlbumLocation === normalizedUrlLocation;
   });
 

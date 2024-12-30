@@ -308,11 +308,19 @@ const albums = [
   }
 ];
 
+function formatLocationForUrl(location) {
+  return location
+    .toLowerCase()
+    .replace(/\s+/g, '-')     // Replace spaces with hyphens
+    .replace(/[^a-z0-9-]/g, ''); // Remove special characters
+}
+
 function PhotographyPage() {
   const navigate = useNavigate();
 
   const handleAlbumClick = (album) => {
-    const formattedLocation = album.location.toLowerCase().replace(/\s+/g, '-');
+    const formattedLocation = formatLocationForUrl(album.location);
+    console.log('Navigating to:', formattedLocation); // Debug log
     navigate(`/photography/${formattedLocation}`);
   };
 
