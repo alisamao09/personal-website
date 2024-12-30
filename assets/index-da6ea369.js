@@ -156,7 +156,7 @@ Error generating stack: `+j.message+`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-`;function Layout(){return jsxRuntimeExports.jsxs(LayoutContainer,{children:[jsxRuntimeExports.jsx(Navbar,{}),jsxRuntimeExports.jsx(Outlet,{}),jsxRuntimeExports.jsx(Footer,{})]})}const BackgroundContainer=newStyled.div`
+`;function Layout(){return jsxRuntimeExports.jsxs(LayoutContainer,{children:[jsxRuntimeExports.jsx(Navbar,{}),jsxRuntimeExports.jsx(Outlet,{}),jsxRuntimeExports.jsx(Footer,{})]})}const backgroundImage="/personal-website/assets/background-78340f0b.jpg",BackgroundContainer=newStyled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -169,7 +169,7 @@ Error generating stack: `+j.message+`
     rgba(18, 18, 18, 0.7),
     rgba(18, 18, 18, 0.7)
   ),
-  url(${{}.PUBLIC_URL}/assets/background.jpg);
+  url(${backgroundImage});
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
