@@ -47,6 +47,8 @@ function AlbumViewPage() {
   const { location } = useParams();
   const navigate = useNavigate();
 
+  console.log('AlbumViewPage rendered, location:', location);
+
   // For testing, use the same album data
   const album = {
     location: 'Arizona',
@@ -65,11 +67,11 @@ function AlbumViewPage() {
   return (
     <PageContainer>
       <BackButton onClick={() => navigate('/photography')}>← Back to Albums</BackButton>
-      <Title>{album.location}</Title>
+      <Title>{location || album.location}</Title>
       <PhotoGrid>
         {album.photos.map(photo => (
           <PhotoCard key={photo.id}>
-            <PhotoImage src={photo.src} alt={album.location} />
+            <PhotoImage src={photo.src} alt={location || album.location} />
           </PhotoCard>
         ))}
       </PhotoGrid>

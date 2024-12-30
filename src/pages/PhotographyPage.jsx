@@ -122,6 +122,8 @@ function PhotographyPage() {
   const navigate = useNavigate();
 
   const handleAlbumClick = (album) => {
+    alert(`Clicking album: ${album.location}`);
+    console.log('Navigating to:', `/photography/${album.location.toLowerCase()}`);
     navigate(`/photography/${album.location.toLowerCase()}`);
   };
 
@@ -129,7 +131,12 @@ function PhotographyPage() {
     <PageContainer>
       <Title>Photography</Title>
       <AlbumGrid>
-        <AlbumCard onClick={() => handleAlbumClick(testAlbum)}>
+        <AlbumCard 
+          onClick={() => {
+            console.log('Card clicked');
+            handleAlbumClick(testAlbum);
+          }}
+        >
           <AlbumCover>
             <AlbumImage src={testAlbum.coverImage} alt={testAlbum.location} />
             <PhotoCount>{testAlbum.photos.length} photos</PhotoCount>
