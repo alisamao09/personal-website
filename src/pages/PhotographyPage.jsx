@@ -123,6 +123,16 @@ const PhotoCount = styled.div`
   border-radius: 4px;
 `;
 
+const TestButton = styled.button`
+  background: ${props => props.theme.colors.primary};
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+`;
+
 // Test with one album first
 const testAlbum = {
   id: 1,
@@ -154,7 +164,7 @@ function PhotographyPage() {
     <PageContainer>
       <Title>Photography</Title>
       <AlbumGrid>
-        <AlbumCard onClick={() => handleAlbumClick(testAlbum)}>
+        <AlbumCard>
           <AlbumCover>
             <AlbumImage src={testAlbum.coverImage} alt={testAlbum.location} />
             <PhotoCount>{testAlbum.photos.length} photos</PhotoCount>
@@ -165,11 +175,14 @@ function PhotographyPage() {
               📅 {testAlbum.date}
             </AlbumDescription>
           </AlbumInfo>
+          <TestButton onClick={() => handleAlbumClick(testAlbum)}>
+            View Album
+          </TestButton>
         </AlbumCard>
       </AlbumGrid>
 
       {selectedAlbum && (
-        <Modal onClick={(e) => e.stopPropagation()}>
+        <Modal>
           <CloseButton onClick={() => setSelectedAlbum(null)}>×</CloseButton>
           <ModalContent>
             <Title>{selectedAlbum.location}</Title>

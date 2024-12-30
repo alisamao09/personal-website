@@ -403,11 +403,12 @@ Error generating stack: `+j.message+`
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   display: flex;
   flex-direction: column;
-  z-index: 1000;
+  z-index: 9999;
   padding: 2rem;
+  overflow-y: auto;
 `,ModalContent=newStyled.div`
   max-width: 1200px;
   margin: 0 auto;
@@ -415,7 +416,7 @@ Error generating stack: `+j.message+`
   flex: 1;
   overflow-y: auto;
 `,CloseButton=newStyled.button`
-  position: absolute;
+  position: fixed;
   top: 1rem;
   right: 1rem;
   background: none;
@@ -423,6 +424,7 @@ Error generating stack: `+j.message+`
   color: white;
   font-size: 2rem;
   cursor: pointer;
+  z-index: 10000;
 `,PhotoGrid=newStyled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -444,7 +446,7 @@ Error generating stack: `+j.message+`
   color: white;
   padding: 0.5rem;
   border-radius: 4px;
-`,testAlbum={id:1,location:"Arizona",date:"2024",coverImage:"/personal-website/assets/photos/AZ/cover.jpg",photos:[{id:1,src:"/personal-website/assets/photos/AZ/photo1.jpg"},{id:2,src:"/personal-website/assets/photos/AZ/photo2.jpg"}]};function PhotographyPage(){const[i,s]=reactExports.useState(null),o=a=>{console.log("Album clicked:",a),s(a)};return jsxRuntimeExports.jsxs(PageContainer,{children:[jsxRuntimeExports.jsx(Title$1,{children:"Photography"}),jsxRuntimeExports.jsx(AlbumGrid,{children:jsxRuntimeExports.jsxs(AlbumCard,{onClick:()=>o(testAlbum),children:[jsxRuntimeExports.jsxs(AlbumCover,{children:[jsxRuntimeExports.jsx(AlbumImage,{src:testAlbum.coverImage,alt:testAlbum.location}),jsxRuntimeExports.jsxs(PhotoCount,{children:[testAlbum.photos.length," photos"]})]}),jsxRuntimeExports.jsx(AlbumInfo,{children:jsxRuntimeExports.jsxs(AlbumDescription,{children:["📍 ",testAlbum.location,jsxRuntimeExports.jsx("br",{}),"📅 ",testAlbum.date]})})]})}),i&&jsxRuntimeExports.jsxs(Modal,{onClick:a=>a.stopPropagation(),children:[jsxRuntimeExports.jsx(CloseButton,{onClick:()=>s(null),children:"×"}),jsxRuntimeExports.jsxs(ModalContent,{children:[jsxRuntimeExports.jsx(Title$1,{children:i.location}),jsxRuntimeExports.jsx(PhotoGrid,{children:i.photos.map(a=>jsxRuntimeExports.jsx(PhotoCard,{children:jsxRuntimeExports.jsx(PhotoImage,{src:a.src,alt:i.location})},a.id))})]})]})]})}const Container=newStyled.div`
+`,testAlbum={id:1,location:"Arizona",date:"2024",coverImage:"/personal-website/assets/photos/AZ/cover.jpg",photos:[{id:1,src:"/personal-website/assets/photos/AZ/photo1.jpg"},{id:2,src:"/personal-website/assets/photos/AZ/photo2.jpg"}]};function PhotographyPage(){const[i,s]=reactExports.useState(null),o=a=>{alert("Album clicked!"),console.log("Album clicked:",a),s(a)};return jsxRuntimeExports.jsxs(PageContainer,{children:[jsxRuntimeExports.jsx(Title$1,{children:"Photography"}),jsxRuntimeExports.jsx(AlbumGrid,{children:jsxRuntimeExports.jsxs(AlbumCard,{onClick:()=>o(testAlbum),children:[jsxRuntimeExports.jsxs(AlbumCover,{children:[jsxRuntimeExports.jsx(AlbumImage,{src:testAlbum.coverImage,alt:testAlbum.location}),jsxRuntimeExports.jsxs(PhotoCount,{children:[testAlbum.photos.length," photos"]})]}),jsxRuntimeExports.jsx(AlbumInfo,{children:jsxRuntimeExports.jsxs(AlbumDescription,{children:["📍 ",testAlbum.location,jsxRuntimeExports.jsx("br",{}),"📅 ",testAlbum.date]})})]})}),i&&jsxRuntimeExports.jsxs(Modal,{onClick:a=>a.stopPropagation(),children:[jsxRuntimeExports.jsx(CloseButton,{onClick:()=>s(null),children:"×"}),jsxRuntimeExports.jsxs(ModalContent,{children:[jsxRuntimeExports.jsx(Title$1,{children:i.location}),jsxRuntimeExports.jsx(PhotoGrid,{children:i.photos.map(a=>jsxRuntimeExports.jsx(PhotoCard,{children:jsxRuntimeExports.jsx(PhotoImage,{src:a.src,alt:i.location})},a.id))})]})]})]})}const Container=newStyled.div`
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -491,4 +493,4 @@ Error generating stack: `+j.message+`
     font-size: 1.1rem;
   }
 `;function ContactPage(){return jsxRuntimeExports.jsxs(Container,{children:[jsxRuntimeExports.jsx(Title,{children:"Contact Me"}),jsxRuntimeExports.jsxs(ContactSection,{children:[jsxRuntimeExports.jsxs(ContactItem,{children:[jsxRuntimeExports.jsx(Icon,{children:jsxRuntimeExports.jsx(FaEnvelope,{})}),jsxRuntimeExports.jsxs(ContactText,{children:[jsxRuntimeExports.jsx("h3",{children:"Email"}),jsxRuntimeExports.jsx(ContactLink,{href:"mailto:alisamao0205@gmail.com",children:"alisamao0205@gmail.com"})]})]}),jsxRuntimeExports.jsxs(ContactItem,{children:[jsxRuntimeExports.jsx(Icon,{children:jsxRuntimeExports.jsx(FaPhone,{})}),jsxRuntimeExports.jsxs(ContactText,{children:[jsxRuntimeExports.jsx("h3",{children:"Phone"}),jsxRuntimeExports.jsx(ContactLink,{href:"tel:+17343538253",children:"(734) 353-8253"})]})]}),jsxRuntimeExports.jsxs(ContactItem,{children:[jsxRuntimeExports.jsx(Icon,{children:jsxRuntimeExports.jsx(FaLinkedin,{})}),jsxRuntimeExports.jsxs(ContactText,{children:[jsxRuntimeExports.jsx("h3",{children:"LinkedIn"}),jsxRuntimeExports.jsx(ContactLink,{href:"https://www.linkedin.com/in/jiangyue-mao-522145199/",target:"_blank",rel:"noopener noreferrer",children:"Jiangyue Mao"})]})]}),jsxRuntimeExports.jsxs(ContactItem,{children:[jsxRuntimeExports.jsx(Icon,{children:jsxRuntimeExports.jsx(FaGithub,{})}),jsxRuntimeExports.jsxs(ContactText,{children:[jsxRuntimeExports.jsx("h3",{children:"GitHub"}),jsxRuntimeExports.jsx(ContactLink,{href:"https://github.com/alisamao09",target:"_blank",rel:"noopener noreferrer",children:"alisamao09"})]})]})]})]})}function AppRoutes(){return jsxRuntimeExports.jsxs(Routes,{children:[jsxRuntimeExports.jsx(Route,{path:"/",element:jsxRuntimeExports.jsx(HomePage,{})}),jsxRuntimeExports.jsxs(Route,{element:jsxRuntimeExports.jsx(Layout,{}),children:[jsxRuntimeExports.jsx(Route,{path:"/resume",element:jsxRuntimeExports.jsx(ResumePage,{})}),jsxRuntimeExports.jsx(Route,{path:"/portfolio",element:jsxRuntimeExports.jsx(PortfolioPage,{})}),jsxRuntimeExports.jsx(Route,{path:"/photography",element:jsxRuntimeExports.jsx(PhotographyPage,{})}),jsxRuntimeExports.jsx(Route,{path:"/contact",element:jsxRuntimeExports.jsx(ContactPage,{})})]})]})}function App(){return console.log("App is rendering"),jsxRuntimeExports.jsx(HashRouter,{children:jsxRuntimeExports.jsxs(ThemeProvider,{theme,children:[jsxRuntimeExports.jsx(GlobalStyles,{}),jsxRuntimeExports.jsx(AppRoutes,{})]})})}console.log("main.jsx is executing");client.createRoot(document.getElementById("root")).render(jsxRuntimeExports.jsx(React.StrictMode,{children:jsxRuntimeExports.jsx(App,{})}));
-//# sourceMappingURL=index-f8b6edcb.js.map
+//# sourceMappingURL=index-a99a7795.js.map
