@@ -477,9 +477,10 @@ Error generating stack: `+j.message+`
   max-width: 1200px;
   margin: 0 auto;
   color: white;
+  position: relative;
 `,Title=newStyled.h1`
   color: ${i=>i.theme.colors.text};
-  margin-bottom: 2rem;
+  margin: 4rem 0 2rem;
   text-align: center;
 `,BackButton=newStyled.button`
   background: ${i=>i.theme.colors.primary};
@@ -488,7 +489,17 @@ Error generating stack: `+j.message+`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-bottom: 1rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: ${i=>i.theme.colors.secondary};
+  }
 `,PhotoGrid=newStyled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -518,4 +529,4 @@ Error generating stack: `+j.message+`
     transform: scale(1.05);
   }
 `,albums=[{id:1,location:"Arizona",date:"2024",coverImage:"/personal-website/assets/photos/AZ/cover.jpg",photos:[{id:1,src:"/personal-website/assets/photos/AZ/photo1.jpg"},{id:2,src:"/personal-website/assets/photos/AZ/photo2.jpg"},{id:3,src:"/personal-website/assets/photos/AZ/photo3.jpg"},{id:4,src:"/personal-website/assets/photos/AZ/photo4.jpg"},{id:5,src:"/personal-website/assets/photos/AZ/photo5.jpg"},{id:6,src:"/personal-website/assets/photos/AZ/photo6.jpg"},{id:7,src:"/personal-website/assets/photos/AZ/photo7.jpg"}]},{id:2,location:"New York",date:"2021-2024",coverImage:"/personal-website/assets/photos/NYC/cover.jpg",photos:[{id:1,src:"/personal-website/assets/photos/NYC/photo1.jpg"},{id:2,src:"/personal-website/assets/photos/NYC/photo2.jpg"},{id:3,src:"/personal-website/assets/photos/NYC/photo3.jpg"},{id:4,src:"/personal-website/assets/photos/NYC/photo4.jpg"}]}];function AlbumViewPage(){const{location:i}=useParams(),s=useNavigate();console.log("URL location:",i);const o=albums.find(a=>{const _=a.location.toLowerCase().replace(/\s+/g,"-"),j=i.toLowerCase().replace(/\s+/g,"-");return console.log("Comparing:",_,"with",j),_===j});return o?jsxRuntimeExports.jsxs(PageContainer,{children:[jsxRuntimeExports.jsx(BackButton,{onClick:()=>s("/photography"),children:"← Back to Albums"}),jsxRuntimeExports.jsx(Title,{children:o.location}),jsxRuntimeExports.jsx(PhotoGrid,{children:o.photos.map(a=>jsxRuntimeExports.jsx(PhotoCard,{children:jsxRuntimeExports.jsx(PhotoImage,{src:a.src,alt:o.location})},a.id))})]}):jsxRuntimeExports.jsxs(PageContainer,{children:[jsxRuntimeExports.jsx(BackButton,{onClick:()=>s("/photography"),children:"← Back to Albums"}),jsxRuntimeExports.jsx(Title,{children:"Album not found"})]})}function AppRoutes(){return jsxRuntimeExports.jsxs(Routes,{children:[jsxRuntimeExports.jsx(Route,{path:"/",element:jsxRuntimeExports.jsx(HomePage,{})}),jsxRuntimeExports.jsxs(Route,{element:jsxRuntimeExports.jsx(Layout,{}),children:[jsxRuntimeExports.jsx(Route,{path:"/resume",element:jsxRuntimeExports.jsx(ResumePage,{})}),jsxRuntimeExports.jsx(Route,{path:"/portfolio",element:jsxRuntimeExports.jsx(PortfolioPage,{})}),jsxRuntimeExports.jsx(Route,{path:"/photography",element:jsxRuntimeExports.jsx(PhotographyPage,{})}),jsxRuntimeExports.jsx(Route,{path:"/photography/:location",element:jsxRuntimeExports.jsx(AlbumViewPage,{})}),jsxRuntimeExports.jsx(Route,{path:"/contact",element:jsxRuntimeExports.jsx(ContactPage,{})})]})]})}function App(){return console.log("App is rendering"),jsxRuntimeExports.jsx(HashRouter,{children:jsxRuntimeExports.jsxs(ThemeProvider,{theme,children:[jsxRuntimeExports.jsx(GlobalStyles,{}),jsxRuntimeExports.jsx(AppRoutes,{})]})})}console.log("main.jsx is executing");client.createRoot(document.getElementById("root")).render(jsxRuntimeExports.jsx(React.StrictMode,{children:jsxRuntimeExports.jsx(App,{})}));
-//# sourceMappingURL=index-70666dbd.js.map
+//# sourceMappingURL=index-faf45312.js.map
