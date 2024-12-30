@@ -40,6 +40,7 @@ const PhotoGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   padding: 1rem;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 `;
@@ -48,6 +49,8 @@ const PhotoCard = styled.div`
   background: rgba(32, 32, 32, 0.6);
   border-radius: 12px;
   overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4/3;
 
   @media (max-width: 1024px) {
     grid-column: span 2;
@@ -60,7 +63,7 @@ const PhotoCard = styled.div`
 
 const PhotoImage = styled.img`
   width: 100%;
-  height: 300px;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.2s;
 
