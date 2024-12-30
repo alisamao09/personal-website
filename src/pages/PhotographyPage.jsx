@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const PageContainer = styled.div`
   padding: 2rem;
@@ -152,7 +152,12 @@ const ModalImage = styled(ImageWithFallback)`
 `;
 
 // Sample data structure
-const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
+const getAssetPath = (path) => {
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  const fullPath = `${import.meta.env.BASE_URL}${cleanPath}`;
+  console.log('Image path:', fullPath);
+  return fullPath;
+};
 
 const albums = [
   {
@@ -636,6 +641,11 @@ const ImageWithFallback = ({ src, alt, ...props }) => {
     setError(true);
   };
 
+  useEffect(() => {
+    // Reset error state when src changes
+    setError(false);
+  }, [src]);
+
   if (error) {
     return <div style={{ 
       width: '100%', 
@@ -645,10 +655,17 @@ const ImageWithFallback = ({ src, alt, ...props }) => {
       alignItems: 'center',
       justifyContent: 'center',
       color: 'white'
-    }}>Image not found</div>;
+    }}>Image not found: {src}</div>;
   }
 
-  return <AlbumImage src={src} alt={alt} onError={handleError} {...props} />;
+  return (
+    <AlbumImage 
+      src={src} 
+      alt={alt} 
+      onError={handleError} 
+      {...props} 
+    />
+  );
 };
 
 function PhotographyPage() {
@@ -703,20 +720,24 @@ function PhotographyPage() {
           <ModalContent>
             <Title>{selectedAlbum.location}</Title>
             <PhotoGrid>
-              {selectedAlbum.photos.map(photo => (
-                <PhotoCard key={photo.id}>
-                  <ImageWithFallback 
-                    src={photo.src} 
-                    alt={photo.caption || selectedAlbum.location}
-                    loading="lazy"
-                  />
-                  {photo.caption && (
-                    <PhotoInfo>
-                      <PhotoDescription>{photo.caption}</PhotoDescription>
-                    </PhotoInfo>
-                  )}
-                </PhotoCard>
-              ))}
+              {selectedAlbum.photos.map(photo => {
+                console.log('Rendering photo:', photo.src);
+                return (
+                  <PhotoCard key={photo.id}>
+                    <ImageWithFallback 
+                      src={photo.src} 
+                      alt={photo.caption || selectedAlbum.location}
+                      loading="lazy"
+                      style={{ width: '100%', height: '300px', objectFit: 'cover' }}
+                    />
+                    {photo.caption && (
+                      <PhotoInfo>
+                        <PhotoDescription>{photo.caption}</PhotoDescription>
+                      </PhotoInfo>
+                    )}
+                  </PhotoCard>
+                );
+              })}
             </PhotoGrid>
           </ModalContent>
         </Modal>
