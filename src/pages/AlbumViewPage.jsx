@@ -6,11 +6,12 @@ const PageContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   color: white;
+  position: relative;
 `;
 
 const Title = styled.h1`
   color: ${props => props.theme.colors.text};
-  margin-bottom: 2rem;
+  margin: 4rem 0 2rem;
   text-align: center;
 `;
 
@@ -21,7 +22,17 @@ const BackButton = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-bottom: 1rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: ${props => props.theme.colors.secondary};
+  }
 `;
 
 const PhotoGrid = styled.div`
@@ -148,7 +159,9 @@ function AlbumViewPage() {
 
   return (
     <PageContainer>
-      <BackButton onClick={() => navigate('/photography')}>← Back to Albums</BackButton>
+      <BackButton onClick={() => navigate('/photography')}>
+        ← Back to Albums
+      </BackButton>
       <Title>{album.location}</Title>
       <PhotoGrid>
         {album.photos.map(photo => (
