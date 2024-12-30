@@ -15,7 +15,7 @@ const BackgroundContainer = styled.div`
     rgba(18, 18, 18, 0.7),
     rgba(18, 18, 18, 0.7)
   ),
-  url('${import.meta.env.BASE_URL}assets/background.jpg');
+  url('/personal-website/assets/background.jpg');
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
