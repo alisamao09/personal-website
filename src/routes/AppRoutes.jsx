@@ -8,15 +8,15 @@ import ContactPage from '../pages/ContactPage';
 
 function AppRoutes() {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route element={<Layout />}>
         <Route path="/resume" element={<ResumePage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/photography" element={<PhotographyPage />} />
         <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-    </Layout>
+      </Route>
+    </Routes>
   );
 }
 

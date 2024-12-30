@@ -34,21 +34,27 @@ const NavLinks = styled.div`
 
 const Logo = styled.h1`
   color: ${props => props.theme.colors.text};
+  text-decoration: none;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 `;
 
 function Navbar() {
   return (
     <Nav>
       <NavContainer>
-        <Link to="/">
+        <StyledLink to="/">
           <Logo>Jiangyue Mao</Logo>
-        </Link>
+        </StyledLink>
         <NavLinks>
-          <Link to="/">Home</Link>
-          <Link to="/resume">Resume</Link>
-          <Link to="/portfolio">Portfolio</Link>
-          <Link to="/photography">Photography</Link>
-          <Link to="/contact">Contact</Link>
+          <StyledLink to="/">Home</StyledLink>
+          <StyledLink to="/resume">Resume</StyledLink>
+          <StyledLink to="/portfolio">Portfolio</StyledLink>
+          <StyledLink to="/photography">Photography</StyledLink>
+          <StyledLink to="/contact">Contact</StyledLink>
         </NavLinks>
       </NavContainer>
     </Nav>

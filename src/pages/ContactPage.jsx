@@ -2,28 +2,28 @@ import styled from '@emotion/styled';
 import { FaEnvelope, FaPhone, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Container = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
   padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Title = styled.h1`
-  color: ${props => props.theme.colors.primary};
-  margin-bottom: 2rem;
+  color: ${props => props.theme.colors.text};
+  margin-bottom: 3rem;
   text-align: center;
 `;
 
 const ContactSection = styled.div`
-  background-color: ${props => props.theme.colors.surface};
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: ${props => props.theme.shadows.md};
-  transition: transform 0.2s;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: ${props => props.theme.shadows.glow};
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
 `;
 
 const ContactItem = styled.div`

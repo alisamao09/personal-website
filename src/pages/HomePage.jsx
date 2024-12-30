@@ -8,8 +8,6 @@ const BackgroundContainer = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100vw;
-  height: 100vh;
   background-color: ${props => props.theme.colors.background};
   background-image: linear-gradient(
     rgba(18, 18, 18, 0.7),
@@ -19,40 +17,22 @@ const BackgroundContainer = styled.div`
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
-  z-index: 0;
+  z-index: -1;
 `;
 
 const PageWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  z-index: 1;
 `;
 
-const Content = styled.div`
-  position: relative;
-  z-index: 2;
+const MainContent = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-`;
-
-const Container = styled.div`
-  text-align: center;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  padding: 2rem;
 `;
 
 const ProfileImage = styled.div`
@@ -105,29 +85,29 @@ const Description = styled.div`
 `;
 
 function HomePage() {
+  console.log('HomePage is rendering');
   return (
     <>
       <BackgroundContainer />
       <PageWrapper>
         <Navbar />
-        <Content>
-          <Container>
-            <ProfileImage>
-              <Image 
-                src="/assets/profile.jpg" 
-                alt="Jiangyue Mao" 
-              />
-            </ProfileImage>
-            <Title>Hi, welcome to my world!</Title>
-            <Subtitle>Engineer. Designer. Innovator.</Subtitle>
-            <Description>
-              <p>
-                I'm Jiangyue Mao, a passionate engineer with a proven track record of delivering scalable solutions in fast-paced environments. 
-                With an MSc in Data Science from the University of Michigan and a BA from University of Toronto, I thrive at the intersection of engineering, design, art, and data.
-              </p>
-            </Description>
-          </Container>
-        </Content>
+        <MainContent>
+          <ProfileImage>
+            <Image 
+              src="/assets/profile.jpg" 
+              alt="Jiangyue Mao" 
+              loading="eager"
+            />
+          </ProfileImage>
+          <Title>Hi, welcome to my world!</Title>
+          <Subtitle>Engineer. Designer. Innovator.</Subtitle>
+          <Description>
+            <p>
+              I'm Jiangyue Mao, a passionate engineer with a proven track record of delivering scalable solutions in fast-paced environments. 
+              With an MSc in Data Science from the University of Michigan and a BA from University of Toronto, I thrive at the intersection of engineering, design, art, and data.
+            </p>
+          </Description>
+        </MainContent>
         <Footer />
       </PageWrapper>
     </>

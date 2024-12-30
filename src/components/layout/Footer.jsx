@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
 const FooterContainer = styled.footer`
   height: 80px;
@@ -50,6 +50,14 @@ function Footer() {
           aria-label="LinkedIn"
         >
           <FaLinkedin />
+        </a>
+        <a 
+          href="https://www.youtube.com/@alisamao4" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+        >
+          <FaYoutube />
         </a>
       </SocialLinks>
     </FooterContainer>

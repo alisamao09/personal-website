@@ -5,11 +5,14 @@ import { theme } from './styles/theme';
 import AppRoutes from './routes/AppRoutes';
 
 function App() {
+  console.log('App is rendering');
   return (
     <Router>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <AppRoutes />
+        <div style={{ color: 'white' }}>
+          <AppRoutes />
+        </div>
       </ThemeProvider>
     </Router>
   );

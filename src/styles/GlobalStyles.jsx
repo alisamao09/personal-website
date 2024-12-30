@@ -8,34 +8,14 @@ const globalStyles = css`
     box-sizing: border-box;
   }
 
-  html, body, #root {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    position: relative;
-  }
-
   body {
+    background-color: #121212;
+    color: white;
     font-family: ${theme.fonts.body};
-    color: ${theme.colors.text};
-    line-height: 1.5;
-    background-color: ${theme.colors.background};
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: ${theme.fonts.heading};
-    font-weight: 700;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  html {
-    scroll-behavior: smooth;
+  #root {
+    min-height: 100vh;
   }
 `;
 
