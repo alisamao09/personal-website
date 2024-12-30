@@ -374,10 +374,12 @@ Error generating stack: `+j.message+`
   padding: 1rem;
   color: white;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: rgba(32, 32, 32, 0.8);
   }
 `,AlbumCover=newStyled.div`
   position: relative;
@@ -434,7 +436,15 @@ Error generating stack: `+j.message+`
   width: 100%;
   height: 300px;
   object-fit: cover;
-`,testAlbum={id:1,location:"Arizona",date:"2024",coverImage:"/personal-website/assets/photos/AZ/cover.jpg",photos:[{id:1,src:"/personal-website/assets/photos/AZ/photo1.jpg"},{id:2,src:"/personal-website/assets/photos/AZ/photo2.jpg"}]};function PhotographyPage(){const[i,s]=reactExports.useState(null);return jsxRuntimeExports.jsxs(PageContainer,{children:[jsxRuntimeExports.jsx(Title$1,{children:"Photography"}),jsxRuntimeExports.jsx(AlbumGrid,{children:jsxRuntimeExports.jsxs(AlbumCard,{onClick:()=>s(testAlbum),children:[jsxRuntimeExports.jsx(AlbumCover,{children:jsxRuntimeExports.jsx(AlbumImage,{src:testAlbum.coverImage,alt:testAlbum.location})}),jsxRuntimeExports.jsx(AlbumInfo,{children:jsxRuntimeExports.jsxs(AlbumDescription,{children:["📍 ",testAlbum.location,jsxRuntimeExports.jsx("br",{}),"📅 ",testAlbum.date]})})]})}),i&&jsxRuntimeExports.jsxs(Modal,{children:[jsxRuntimeExports.jsx(CloseButton,{onClick:()=>s(null),children:"×"}),jsxRuntimeExports.jsxs(ModalContent,{children:[jsxRuntimeExports.jsx(Title$1,{children:i.location}),jsxRuntimeExports.jsx(PhotoGrid,{children:i.photos.map(o=>jsxRuntimeExports.jsx(PhotoCard,{children:jsxRuntimeExports.jsx(PhotoImage,{src:o.src,alt:i.location})},o.id))})]})]})]})}const Container=newStyled.div`
+`,PhotoCount=newStyled.div`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+`,testAlbum={id:1,location:"Arizona",date:"2024",coverImage:"/personal-website/assets/photos/AZ/cover.jpg",photos:[{id:1,src:"/personal-website/assets/photos/AZ/photo1.jpg"},{id:2,src:"/personal-website/assets/photos/AZ/photo2.jpg"}]};function PhotographyPage(){const[i,s]=reactExports.useState(null),o=a=>{console.log("Album clicked:",a),s(a)};return jsxRuntimeExports.jsxs(PageContainer,{children:[jsxRuntimeExports.jsx(Title$1,{children:"Photography"}),jsxRuntimeExports.jsx(AlbumGrid,{children:jsxRuntimeExports.jsxs(AlbumCard,{onClick:()=>o(testAlbum),children:[jsxRuntimeExports.jsxs(AlbumCover,{children:[jsxRuntimeExports.jsx(AlbumImage,{src:testAlbum.coverImage,alt:testAlbum.location}),jsxRuntimeExports.jsxs(PhotoCount,{children:[testAlbum.photos.length," photos"]})]}),jsxRuntimeExports.jsx(AlbumInfo,{children:jsxRuntimeExports.jsxs(AlbumDescription,{children:["📍 ",testAlbum.location,jsxRuntimeExports.jsx("br",{}),"📅 ",testAlbum.date]})})]})}),i&&jsxRuntimeExports.jsxs(Modal,{onClick:a=>a.stopPropagation(),children:[jsxRuntimeExports.jsx(CloseButton,{onClick:()=>s(null),children:"×"}),jsxRuntimeExports.jsxs(ModalContent,{children:[jsxRuntimeExports.jsx(Title$1,{children:i.location}),jsxRuntimeExports.jsx(PhotoGrid,{children:i.photos.map(a=>jsxRuntimeExports.jsx(PhotoCard,{children:jsxRuntimeExports.jsx(PhotoImage,{src:a.src,alt:i.location})},a.id))})]})]})]})}const Container=newStyled.div`
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -481,4 +491,4 @@ Error generating stack: `+j.message+`
     font-size: 1.1rem;
   }
 `;function ContactPage(){return jsxRuntimeExports.jsxs(Container,{children:[jsxRuntimeExports.jsx(Title,{children:"Contact Me"}),jsxRuntimeExports.jsxs(ContactSection,{children:[jsxRuntimeExports.jsxs(ContactItem,{children:[jsxRuntimeExports.jsx(Icon,{children:jsxRuntimeExports.jsx(FaEnvelope,{})}),jsxRuntimeExports.jsxs(ContactText,{children:[jsxRuntimeExports.jsx("h3",{children:"Email"}),jsxRuntimeExports.jsx(ContactLink,{href:"mailto:alisamao0205@gmail.com",children:"alisamao0205@gmail.com"})]})]}),jsxRuntimeExports.jsxs(ContactItem,{children:[jsxRuntimeExports.jsx(Icon,{children:jsxRuntimeExports.jsx(FaPhone,{})}),jsxRuntimeExports.jsxs(ContactText,{children:[jsxRuntimeExports.jsx("h3",{children:"Phone"}),jsxRuntimeExports.jsx(ContactLink,{href:"tel:+17343538253",children:"(734) 353-8253"})]})]}),jsxRuntimeExports.jsxs(ContactItem,{children:[jsxRuntimeExports.jsx(Icon,{children:jsxRuntimeExports.jsx(FaLinkedin,{})}),jsxRuntimeExports.jsxs(ContactText,{children:[jsxRuntimeExports.jsx("h3",{children:"LinkedIn"}),jsxRuntimeExports.jsx(ContactLink,{href:"https://www.linkedin.com/in/jiangyue-mao-522145199/",target:"_blank",rel:"noopener noreferrer",children:"Jiangyue Mao"})]})]}),jsxRuntimeExports.jsxs(ContactItem,{children:[jsxRuntimeExports.jsx(Icon,{children:jsxRuntimeExports.jsx(FaGithub,{})}),jsxRuntimeExports.jsxs(ContactText,{children:[jsxRuntimeExports.jsx("h3",{children:"GitHub"}),jsxRuntimeExports.jsx(ContactLink,{href:"https://github.com/alisamao09",target:"_blank",rel:"noopener noreferrer",children:"alisamao09"})]})]})]})]})}function AppRoutes(){return jsxRuntimeExports.jsxs(Routes,{children:[jsxRuntimeExports.jsx(Route,{path:"/",element:jsxRuntimeExports.jsx(HomePage,{})}),jsxRuntimeExports.jsxs(Route,{element:jsxRuntimeExports.jsx(Layout,{}),children:[jsxRuntimeExports.jsx(Route,{path:"/resume",element:jsxRuntimeExports.jsx(ResumePage,{})}),jsxRuntimeExports.jsx(Route,{path:"/portfolio",element:jsxRuntimeExports.jsx(PortfolioPage,{})}),jsxRuntimeExports.jsx(Route,{path:"/photography",element:jsxRuntimeExports.jsx(PhotographyPage,{})}),jsxRuntimeExports.jsx(Route,{path:"/contact",element:jsxRuntimeExports.jsx(ContactPage,{})})]})]})}function App(){return console.log("App is rendering"),jsxRuntimeExports.jsx(HashRouter,{children:jsxRuntimeExports.jsxs(ThemeProvider,{theme,children:[jsxRuntimeExports.jsx(GlobalStyles,{}),jsxRuntimeExports.jsx(AppRoutes,{})]})})}console.log("main.jsx is executing");client.createRoot(document.getElementById("root")).render(jsxRuntimeExports.jsx(React.StrictMode,{children:jsxRuntimeExports.jsx(App,{})}));
-//# sourceMappingURL=index-9a1fbafb.js.map
+//# sourceMappingURL=index-f8b6edcb.js.map
