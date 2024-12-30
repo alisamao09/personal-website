@@ -185,12 +185,21 @@ function ResumePage() {
     setHighlightedCompany(company);
   };
 
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = `${import.meta.env.BASE_URL}assets/resume.pdf`;
+    link.download = 'Jiangyue_Mao_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <Container>
       <Header>
         <Title>Resume</Title>
-        <DownloadButton href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer">
-          <FaDownload /> Download PDF
+        <DownloadButton onClick={handleDownload}>
+          Download Resume <FaDownload style={{ marginLeft: '0.5rem' }} />
         </DownloadButton>
       </Header>
 

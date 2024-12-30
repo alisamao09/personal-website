@@ -620,6 +620,30 @@ const albums = [
   }))
 }));
 
+// Add this component
+const ImageWithFallback = ({ src, alt, ...props }) => {
+  const [error, setError] = useState(false);
+
+  const handleError = () => {
+    console.error(`Failed to load image: ${src}`);
+    setError(true);
+  };
+
+  if (error) {
+    return <div style={{ 
+      width: '100%', 
+      height: '100%', 
+      backgroundColor: '#333',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: 'white'
+    }}>Image not found</div>;
+  }
+
+  return <AlbumImage src={src} alt={alt} onError={handleError} {...props} />;
+};
+
 function PhotographyPage() {
   const [selectedAlbum, setSelectedAlbum] = useState(null);
 
@@ -649,7 +673,11 @@ function PhotographyPage() {
         {sortedAlbums.map(album => (
           <AlbumCard key={album.id} onClick={() => setSelectedAlbum(album)}>
             <AlbumCover>
-              <AlbumImage src={album.coverImage} alt={album.title} loading="lazy" />
+              <ImageWithFallback 
+                src={album.coverImage} 
+                alt={album.location} 
+                loading="lazy" 
+              />
               <PhotoCount>{album.photos.length} photos</PhotoCount>
             </AlbumCover>
             <AlbumInfo>
