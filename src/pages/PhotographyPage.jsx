@@ -145,13 +145,48 @@ const PhotoDescription = styled.p`
 `;
 
 // Add ImageWithFallback for modal photos
+const ImageWithFallback = ({ src, alt, ...props }) => {
+  const [error, setError] = useState(false);
+
+  const handleError = () => {
+    console.error(`Failed to load image: ${src}`);
+    setError(true);
+  };
+
+  useEffect(() => {
+    setError(false);
+  }, [src]);
+
+  if (error) {
+    return <div style={{ 
+      width: '100%', 
+      height: '100%', 
+      backgroundColor: '#333',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: 'white'
+    }}>Image not found: {src}</div>;
+  }
+
+  return (
+    <AlbumImage 
+      src={src} 
+      alt={alt} 
+      onError={handleError} 
+      {...props} 
+    />
+  );
+};
+
+// 2. Define ImageWithFallback before using it
 const ModalImage = styled(ImageWithFallback)`
   width: 100%;
   height: 300px;
   object-fit: cover;
 `;
 
-// Sample data structure
+// 4. Define the getAssetPath helper
 const getAssetPath = (path) => {
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
   const fullPath = `${import.meta.env.BASE_URL}${cleanPath}`;
@@ -159,6 +194,7 @@ const getAssetPath = (path) => {
   return fullPath;
 };
 
+// 5. Define the albums data
 const albums = [
   {
     id: 1,
@@ -631,42 +667,6 @@ const albums = [
     src: getAssetPath(photo.src)
   }))
 }));
-
-// Add this component
-const ImageWithFallback = ({ src, alt, ...props }) => {
-  const [error, setError] = useState(false);
-
-  const handleError = () => {
-    console.error(`Failed to load image: ${src}`);
-    setError(true);
-  };
-
-  useEffect(() => {
-    // Reset error state when src changes
-    setError(false);
-  }, [src]);
-
-  if (error) {
-    return <div style={{ 
-      width: '100%', 
-      height: '100%', 
-      backgroundColor: '#333',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: 'white'
-    }}>Image not found: {src}</div>;
-  }
-
-  return (
-    <AlbumImage 
-      src={src} 
-      alt={alt} 
-      onError={handleError} 
-      {...props} 
-    />
-  );
-};
 
 function PhotographyPage() {
   const [selectedAlbum, setSelectedAlbum] = useState(null);
