@@ -58,9 +58,69 @@ const PhotoImage = styled.img`
   }
 `;
 
-// Add the same albums data
+// Add the complete albums data
 const albums = [
-  // ... copy the same albums array from PhotographyPage
+  {
+    id: 1,
+    location: 'Arizona',
+    date: '2024',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/AZ/cover.jpg`,
+    photos: [
+      {
+        id: 1,
+        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo1.jpg`,
+      },
+      {
+        id: 2,
+        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo2.jpg`,
+      },
+      {
+        id: 3,
+        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo3.jpg`,
+      },
+      {
+        id: 4,
+        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo4.jpg`,
+      },
+      {
+        id: 5,
+        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo5.jpg`,
+      },
+      {
+        id: 6,
+        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo6.jpg`,
+      },
+      {
+        id: 7,
+        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo7.jpg`,
+      }
+    ]
+  },
+  {
+    id: 2,
+    location: 'New York',
+    date: '2021-2024',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/NYC/cover.jpg`,
+    photos: [
+      {
+        id: 1,
+        src: `${import.meta.env.BASE_URL}assets/photos/NYC/photo1.jpg`,
+      },
+      {
+        id: 2,
+        src: `${import.meta.env.BASE_URL}assets/photos/NYC/photo2.jpg`,
+      },
+      {
+        id: 3,
+        src: `${import.meta.env.BASE_URL}assets/photos/NYC/photo3.jpg`,
+      },
+      {
+        id: 4,
+        src: `${import.meta.env.BASE_URL}assets/photos/NYC/photo4.jpg`,
+      }
+    ]
+  }
+  // ... add all your other albums with their photos
 ];
 
 function AlbumViewPage() {
