@@ -96,7 +96,7 @@ function HomePage() {
         <MainContent>
           <ProfileImage>
             <Image 
-              src="/assets/profile.jpg" 
+              src={`${import.meta.env.BASE_URL}assets/profile.jpg`}
               alt="Jiangyue Mao" 
               loading="eager"
             />

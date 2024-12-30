@@ -110,7 +110,7 @@ function PortfolioPage() {
           <ErrorMessage>{error}</ErrorMessage>
         ) : (
           <Document
-            file="/assets/portfolio.pdf"
+            file={`${import.meta.env.BASE_URL}assets/portfolio.pdf`}
             onLoadSuccess={onDocumentLoadSuccess}
             onLoadError={onDocumentLoadError}
             loading={<LoadingMessage>Loading PDF...</LoadingMessage>}

@@ -145,26 +145,28 @@ const PhotoDescription = styled.p`
 `;
 
 // Sample data structure
+const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
+
 const albums = [
   {
     id: 1,
     location: 'Ann Arbor, MI',
     date: '2021 - 2023',
-    coverImage: '/assets/photos/AA/cover.jpg',
+    coverImage: getAssetPath('assets/photos/AA/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/AA/photo1.jpg',
+        src: getAssetPath('assets/photos/AA/photo1.jpg'),
         caption: 'North Campus'
       },
       {
         id: 2,
-        src: '/assets/photos/AA/photo2.jpg',
+        src: getAssetPath('assets/photos/AA/photo2.jpg'),
         caption: 'Central Campus'
       },
       {
         id: 3,
-        src: '/assets/photos/AA/cover.jpg',
+        src: getAssetPath('assets/photos/AA/cover.jpg'),
       },
       // Add more photos
     ]
@@ -173,15 +175,15 @@ const albums = [
     id: 2,
     location: 'Austin, TX',
     date: '2023',
-    coverImage: '/assets/photos/austin/cover.jpg',
+    coverImage: getAssetPath('assets/photos/austin/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/austin/photo1.jpg',
+        src: getAssetPath('assets/photos/austin/photo1.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/austin/cover.jpg',
+        src: getAssetPath('assets/photos/austin/cover.jpg'),
       },
     ]
   },
@@ -189,39 +191,39 @@ const albums = [
     id: 3,
     location: 'Arizona',
     date: '2024',
-    coverImage: '/assets/photos/AZ/cover.jpg',
+    coverImage: getAssetPath('assets/photos/AZ/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/AZ/photo1.jpg',
+        src: getAssetPath('assets/photos/AZ/photo1.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/AZ/photo2.jpg',
+        src: getAssetPath('assets/photos/AZ/photo2.jpg'),
       },
       {
         id: 3,
-        src: '/assets/photos/AZ/photo3.jpg',
+        src: getAssetPath('assets/photos/AZ/photo3.jpg'),
       },
       {
         id: 4,
-        src: '/assets/photos/AZ/photo4.jpg',
+        src: getAssetPath('assets/photos/AZ/photo4.jpg'),
       },
       {
         id: 5,
-        src: '/assets/photos/AZ/photo5.jpg',
+        src: getAssetPath('assets/photos/AZ/photo5.jpg'),
       },
       {
         id: 6,
-        src: '/assets/photos/AZ/photo6.jpg',
+        src: getAssetPath('assets/photos/AZ/photo6.jpg'),
       },
       {
         id: 7,
-        src: '/assets/photos/AZ/photo7.jpg',
+        src: getAssetPath('assets/photos/AZ/photo7.jpg'),
       },
       {
         id: 8,
-        src: '/assets/photos/AZ/cover.jpg',
+        src: getAssetPath('assets/photos/AZ/cover.jpg'),
       },
     ]
   },
@@ -229,27 +231,27 @@ const albums = [
     id: 4,
     location: 'New York',
     date: '2021-2024',
-    coverImage: '/assets/photos/NYC/cover.jpg',
+    coverImage: getAssetPath('assets/photos/NYC/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/NYC/photo1.jpg',
+        src: getAssetPath('assets/photos/NYC/photo1.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/NYC/photo2.jpg',
+        src: getAssetPath('assets/photos/NYC/photo2.jpg'),
       },
       {
         id: 3,
-        src: '/assets/photos/NYC/photo3.jpg',
+        src: getAssetPath('assets/photos/NYC/photo3.jpg'),
       },
       {
         id: 4,
-        src: '/assets/photos/NYC/photo4.jpg',
+        src: getAssetPath('assets/photos/NYC/photo4.jpg'),
       },
       {
         id: 5,
-        src: '/assets/photos/NYC/cover.jpg',
+        src: getAssetPath('assets/photos/NYC/cover.jpg'),
       },
     ]
   },
@@ -257,51 +259,51 @@ const albums = [
     id: 5,
     location: 'Toronto',
     date: '2017-2024',
-    coverImage: '/assets/photos/toronto/cover.jpg',
+    coverImage: getAssetPath('assets/photos/toronto/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/toronto/cover.jpg',
+        src: getAssetPath('assets/photos/toronto/cover.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/toronto/photo2.jpg',
+        src: getAssetPath('assets/photos/toronto/photo2.jpg'),
       },
       {
         id: 3,
-        src: '/assets/photos/toronto/photo3.jpg',
+        src: getAssetPath('assets/photos/toronto/photo3.jpg'),
       },
       {
         id: 4,
-        src: '/assets/photos/toronto/photo4.jpg',
+        src: getAssetPath('assets/photos/toronto/photo4.jpg'),
       },
       {
         id: 5,
-        src: '/assets/photos/toronto/photo5.jpg',
+        src: getAssetPath('assets/photos/toronto/photo5.jpg'),
       },
       {
         id: 6,
-        src: '/assets/photos/toronto/photo6.jpg',
+        src: getAssetPath('assets/photos/toronto/photo6.jpg'),
       },
       {
         id: 7,
-        src: '/assets/photos/toronto/photo7.jpg',
+        src: getAssetPath('assets/photos/toronto/photo7.jpg'),
       },
       {
         id: 8,
-        src: '/assets/photos/toronto/photo8.jpg',
+        src: getAssetPath('assets/photos/toronto/photo8.jpg'),
       },
       {
         id: 9,
-        src: '/assets/photos/toronto/photo9.jpg',
+        src: getAssetPath('assets/photos/toronto/photo9.jpg'),
       },
       {
         id: 10,
-        src: '/assets/photos/toronto/photo10.jpg',
+        src: getAssetPath('assets/photos/toronto/photo10.jpg'),
       },
       {
         id: 11,
-        src: '/assets/photos/toronto/photo11.jpg',
+        src: getAssetPath('assets/photos/toronto/photo11.jpg'),
       },
     ]
   },
@@ -309,19 +311,19 @@ const albums = [
     id: 6,
     location: 'San Francisco',
     date: '2023',
-    coverImage: '/assets/photos/SF/cover.jpg',
+    coverImage: getAssetPath('assets/photos/SF/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/SF/cover.jpg',
+        src: getAssetPath('assets/photos/SF/cover.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/SF/photo1.jpg',
+        src: getAssetPath('assets/photos/SF/photo1.jpg'),
       },
       {
         id: 3,
-        src: '/assets/photos/SF/photo2.jpg',
+        src: getAssetPath('assets/photos/SF/photo2.jpg'),
       },
     ]
   },
@@ -329,43 +331,43 @@ const albums = [
     id: 7,
     location: 'Seattle',
     date: '2023-2024',
-    coverImage: '/assets/photos/SEA/cover.jpg',
+    coverImage: getAssetPath('assets/photos/SEA/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/SEA/cover.jpg',
+        src: getAssetPath('assets/photos/SEA/cover.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/SEA/photo1.jpg',
+        src: getAssetPath('assets/photos/SEA/photo1.jpg'),
       },
       {
         id: 3,
-        src: '/assets/photos/SEA/photo2.jpg',
+        src: getAssetPath('assets/photos/SEA/photo2.jpg'),
       },
       {
         id: 4,
-        src: '/assets/photos/SEA/photo3.jpg',
+        src: getAssetPath('assets/photos/SEA/photo3.jpg'),
       },
       {
         id: 5,
-        src: '/assets/photos/SEA/photo4.jpg',
+        src: getAssetPath('assets/photos/SEA/photo4.jpg'),
       },
       {
         id: 6,
-        src: '/assets/photos/SEA/photo5.jpg',
+        src: getAssetPath('assets/photos/SEA/photo5.jpg'),
       },
       {
         id: 7,
-        src: '/assets/photos/SEA/photo6.jpg',
+        src: getAssetPath('assets/photos/SEA/photo6.jpg'),
       },
       {
         id: 8,
-        src: '/assets/photos/SEA/photo7.jpg',
+        src: getAssetPath('assets/photos/SEA/photo7.jpg'),
       },
       {
         id: 9,
-        src: '/assets/photos/SEA/photo8.jpg',
+        src: getAssetPath('assets/photos/SEA/photo8.jpg'),
       },
     ]
   },
@@ -373,15 +375,15 @@ const albums = [
     id: 8,
     location: 'Chicago',
     date: '2022',
-    coverImage: '/assets/photos/chicago/cover.jpg',
+    coverImage: getAssetPath('assets/photos/chicago/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/chicago/cover.jpg',
+        src: getAssetPath('assets/photos/chicago/cover.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/chicago/photo1.jpg',
+        src: getAssetPath('assets/photos/chicago/photo1.jpg'),
       },
     ]
   },
@@ -389,31 +391,31 @@ const albums = [
     id: 9,
     location: 'Los Angeles',
     date: '2024',
-    coverImage: '/assets/photos/LA/cover.jpg',
+    coverImage: getAssetPath('assets/photos/LA/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/LA/cover.jpg',
+        src: getAssetPath('assets/photos/LA/cover.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/LA/photo1.jpg',
+        src: getAssetPath('assets/photos/LA/photo1.jpg'),
       },
       {
         id: 3,
-        src: '/assets/photos/LA/photo2.jpg',
+        src: getAssetPath('assets/photos/LA/photo2.jpg'),
       },
       {
         id: 4,
-        src: '/assets/photos/LA/photo3.jpg',
+        src: getAssetPath('assets/photos/LA/photo3.jpg'),
       },
       {
         id: 5,
-        src: '/assets/photos/LA/photo4.jpg',
+        src: getAssetPath('assets/photos/LA/photo4.jpg'),
       },
       {
         id: 6,
-        src: '/assets/photos/LA/photo5.jpg',
+        src: getAssetPath('assets/photos/LA/photo5.jpg'),
       },
     ]
   },
@@ -421,15 +423,15 @@ const albums = [
     id: 10,
     location: 'Detroit',
     date: '2022',
-    coverImage: '/assets/photos/Detroit/cover.jpg',
+    coverImage: getAssetPath('assets/photos/Detroit/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/Detroit/cover.jpg',
+        src: getAssetPath('assets/photos/Detroit/cover.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/Detroit/photo1.jpg',
+        src: getAssetPath('assets/photos/Detroit/photo1.jpg'),
       },
     ]
   },
@@ -437,15 +439,15 @@ const albums = [
     id: 11,
     location: 'Portland',
     date: '2024',
-    coverImage: '/assets/photos/Portland/cover.jpg',
+    coverImage: getAssetPath('assets/photos/Portland/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/Portland/cover.jpg',
+        src: getAssetPath('assets/photos/Portland/cover.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/Portland/photo1.jpg',
+        src: getAssetPath('assets/photos/Portland/photo1.jpg'),
       },
     ]
   },
@@ -453,27 +455,27 @@ const albums = [
     id: 12,
     location: 'Las Vegas',
     date: '2024',
-    coverImage: '/assets/photos/vegas/cover.jpg',
+    coverImage: getAssetPath('assets/photos/vegas/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/vegas/cover.jpg',
+        src: getAssetPath('assets/photos/vegas/cover.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/vegas/photo1.jpg',
+        src: getAssetPath('assets/photos/vegas/photo1.jpg'),
       },
       {
         id: 3,
-        src: '/assets/photos/vegas/photo2.jpg',
+        src: getAssetPath('assets/photos/vegas/photo2.jpg'),
       },
       {
         id: 4,
-        src: '/assets/photos/vegas/photo3.jpg',
+        src: getAssetPath('assets/photos/vegas/photo3.jpg'),
       },
       {
         id: 5,
-        src: '/assets/photos/vegas/photo4.jpg',
+        src: getAssetPath('assets/photos/vegas/photo4.jpg'),
       },
     ]
   },
@@ -481,23 +483,23 @@ const albums = [
     id: 13,
     location: 'Boston, MA',
     date: '2024',
-    coverImage: '/assets/photos/boston/cover.jpg',
+    coverImage: getAssetPath('assets/photos/boston/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/boston/cover.jpg',
+        src: getAssetPath('assets/photos/boston/cover.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/boston/photo1.jpg',
+        src: getAssetPath('assets/photos/boston/photo1.jpg'),
       },
       {
         id: 3,
-        src: '/assets/photos/boston/photo2.jpg',
+        src: getAssetPath('assets/photos/boston/photo2.jpg'),
       },
       {
         id: 4,
-        src: '/assets/photos/boston/photo3.jpg',
+        src: getAssetPath('assets/photos/boston/photo3.jpg'),
       },
     ]
   },
@@ -505,11 +507,11 @@ const albums = [
     id: 14,
     location: 'Bay Area, CA',
     date: '2023',
-    coverImage: '/assets/photos/Bay/cover.jpg',
+    coverImage: getAssetPath('assets/photos/Bay/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/Bay/cover.jpg',
+        src: getAssetPath('assets/photos/Bay/cover.jpg'),
       },
     ]
   },
@@ -517,11 +519,11 @@ const albums = [
     id: 15,
     location: 'Colorado',
     date: '2022-2024',
-    coverImage: '/assets/photos/CO/cover.jpg',
+    coverImage: getAssetPath('assets/photos/CO/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/CO/cover.jpg',
+        src: getAssetPath('assets/photos/CO/cover.jpg'),
       },
     ]
   },
@@ -529,19 +531,19 @@ const albums = [
     id: 16,
     location: 'Washington, DC',
     date: '2023',
-    coverImage: '/assets/photos/DC/cover.jpg',
+    coverImage: getAssetPath('assets/photos/DC/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/DC/cover.jpg',
+        src: getAssetPath('assets/photos/DC/cover.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/DC/photo1.jpg',
+        src: getAssetPath('assets/photos/DC/photo1.jpg'),
       },
       {
         id: 3,
-        src: '/assets/photos/DC/photo2.jpg',
+        src: getAssetPath('assets/photos/DC/photo2.jpg'),
       },
     ]
   },
@@ -549,19 +551,19 @@ const albums = [
     id: 17,
     location: 'Monterey, CA',
     date: '2022',
-    coverImage: '/assets/photos/Monterey/cover.jpg',
+    coverImage: getAssetPath('assets/photos/Monterey/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/Monterey/cover.jpg',
+        src: getAssetPath('assets/photos/Monterey/cover.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/Monterey/photo1.jpg',
+        src: getAssetPath('assets/photos/Monterey/photo1.jpg'),
       },
       {
         id: 3,
-        src: '/assets/photos/Monterey/photo2.jpg',
+        src: getAssetPath('assets/photos/Monterey/photo2.jpg'),
       },
     ]
   },
@@ -569,23 +571,23 @@ const albums = [
     id: 18,
     location: 'Utah',
     date: '2022',
-    coverImage: '/assets/photos/UT/cover.jpg',
+    coverImage: getAssetPath('assets/photos/UT/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/UT/cover.jpg',
+        src: getAssetPath('assets/photos/UT/cover.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/UT/photo1.jpg',
+        src: getAssetPath('assets/photos/UT/photo1.jpg'),
       },
       {
         id: 3,
-        src: '/assets/photos/UT/photo2.jpg',
+        src: getAssetPath('assets/photos/UT/photo2.jpg'),
       },
       {
         id: 4,
-        src: '/assets/photos/UT/photo3.jpg',
+        src: getAssetPath('assets/photos/UT/photo3.jpg'),
       },
     ]
   },
@@ -593,24 +595,30 @@ const albums = [
     id: 19,
     location: 'Vancouver, BC',
     date: '2024',
-    coverImage: '/assets/photos/van/cover.jpg',
+    coverImage: getAssetPath('assets/photos/van/cover.jpg'),
     photos: [
       {
         id: 1,
-        src: '/assets/photos/van/cover.jpg',
+        src: getAssetPath('assets/photos/van/cover.jpg'),
       },
       {
         id: 2,
-        src: '/assets/photos/van/photo1.jpg',
+        src: getAssetPath('assets/photos/van/photo1.jpg'),
       },
       {
         id: 3,
-        src: '/assets/photos/van/photo2.jpg',
+        src: getAssetPath('assets/photos/van/photo2.jpg'),
       },
     ]
   },
   // Add more albums
-];
+].map(album => ({
+  ...album,
+  photos: album.photos.map(photo => ({
+    ...photo,
+    src: getAssetPath(photo.src)
+  }))
+}));
 
 function PhotographyPage() {
   const [selectedAlbum, setSelectedAlbum] = useState(null);
