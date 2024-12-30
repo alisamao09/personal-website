@@ -1,0 +1,32 @@
+personal-website/
+├── src/
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   └── Layout.jsx
+│   │   ├── home/
+│   │   │   ├── Hero.jsx
+│   │   │   └── About.jsx
+│   │   ├── resume/
+│   │   │   ├── Timeline.jsx
+│   │   │   └── ExperienceCard.jsx
+│   │   ├── portfolio/
+│   │   │   ├── PortfolioGrid.jsx
+│   │   │   └── ProjectCard.jsx
+│   │   ├── photography/
+│   │   │   ├── Gallery.jsx
+│   │   │   └── PhotoCard.jsx
+│   │   └── contact/
+│   │       └── ContactForm.jsx
+│   ├── pages/
+│   │   ├── HomePage.jsx
+│   │   ├── ResumePage.jsx
+│   │   ├── PortfolioPage.jsx
+│   │   ├── PhotographyPage.jsx
+│   │   └── ContactPage.jsx
+│   ├── styles/
+│   │   ├── theme.js
+│   │   └── GlobalStyles.js
+│   ├── App.jsx
+│   └── main.jsx 
