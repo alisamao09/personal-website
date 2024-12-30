@@ -139,7 +139,15 @@ const albums = [
     date: '2023-2024',
     coverImage: `${import.meta.env.BASE_URL}assets/photos/SEA/cover.jpg`,
     photos: [
-      // Add all Seattle photos
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/SEA/photo1.jpg` },
+      { id: 2, src: `${import.meta.env.BASE_URL}assets/photos/SEA/photo2.jpg` },
+      { id: 3, src: `${import.meta.env.BASE_URL}assets/photos/SEA/photo3.jpg` },
+      { id: 4, src: `${import.meta.env.BASE_URL}assets/photos/SEA/photo4.jpg` },
+      { id: 5, src: `${import.meta.env.BASE_URL}assets/photos/SEA/photo5.jpg` },
+      { id: 6, src: `${import.meta.env.BASE_URL}assets/photos/SEA/photo6.jpg` },
+      { id: 7, src: `${import.meta.env.BASE_URL}assets/photos/SEA/photo7.jpg` },
+      { id: 8, src: `${import.meta.env.BASE_URL}assets/photos/SEA/photo8.jpg` },
+      { id: 9, src: `${import.meta.env.BASE_URL}assets/photos/SEA/photo9.jpg` }
     ]
   },
   {
@@ -148,23 +156,150 @@ const albums = [
     date: '2017-2024',
     coverImage: `${import.meta.env.BASE_URL}assets/photos/toronto/cover.jpg`,
     photos: [
-      // Add all Toronto photos
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/toronto/photo1.jpg` },
+      { id: 2, src: `${import.meta.env.BASE_URL}assets/photos/toronto/photo2.jpg` },
+      { id: 3, src: `${import.meta.env.BASE_URL}assets/photos/toronto/photo3.jpg` },
+      { id: 4, src: `${import.meta.env.BASE_URL}assets/photos/toronto/photo4.jpg` },
+      { id: 5, src: `${import.meta.env.BASE_URL}assets/photos/toronto/photo5.jpg` },
+      { id: 6, src: `${import.meta.env.BASE_URL}assets/photos/toronto/photo6.jpg` },
+      { id: 7, src: `${import.meta.env.BASE_URL}assets/photos/toronto/photo7.jpg` },
+      { id: 8, src: `${import.meta.env.BASE_URL}assets/photos/toronto/photo8.jpg` },
+      { id: 9, src: `${import.meta.env.BASE_URL}assets/photos/toronto/photo9.jpg` },
+      { id: 10, src: `${import.meta.env.BASE_URL}assets/photos/toronto/photo10.jpg` },
+      { id: 11, src: `${import.meta.env.BASE_URL}assets/photos/toronto/photo11.jpg` }
     ]
   },
-  // Add all other albums:
-  // - Austin
-  // - Bay Area
-  // - Boston
-  // - Chicago
-  // - Colorado
-  // - Detroit
-  // - Los Angeles
-  // - Monterey
-  // - Portland
-  // - Utah
-  // - Vancouver
-  // - Las Vegas
-  // - Washington DC
+  {
+    id: 6,
+    location: 'Austin',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/austin/cover.jpg`,
+    photos: [
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/austin/photo1.jpg` }
+    ]
+  },
+  {
+    id: 7,
+    location: 'Bay Area',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/Bay/cover.jpg`,
+    photos: [
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/Bay/cover.jpg` }
+    ]
+  },
+  {
+    id: 8,
+    location: 'Boston',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/boston/cover.jpg`,
+    photos: [
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/boston/photo1.jpg` },
+      { id: 2, src: `${import.meta.env.BASE_URL}assets/photos/boston/photo2.jpg` },
+      { id: 3, src: `${import.meta.env.BASE_URL}assets/photos/boston/photo3.jpg` }
+    ]
+  },
+  {
+    id: 9,
+    location: 'Chicago',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/chicago/cover.jpg`,
+    photos: [
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/chicago/photo1.jpg` }
+    ]
+  },
+  {
+    id: 10,
+    location: 'Colorado',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/CO/cover.jpg`,
+    photos: [
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/CO/cover.jpg` }
+    ]
+  },
+  {
+    id: 11,
+    location: 'Detroit',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/Detroit/cover.jpg`,
+    photos: [
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/Detroit/photo1.jpg` }
+    ]
+  },
+  {
+    id: 12,
+    location: 'Los Angeles',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/LA/cover.jpg`,
+    photos: [
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/LA/photo1.jpg` },
+      { id: 2, src: `${import.meta.env.BASE_URL}assets/photos/LA/photo2.jpg` },
+      { id: 3, src: `${import.meta.env.BASE_URL}assets/photos/LA/photo3.jpg` },
+      { id: 4, src: `${import.meta.env.BASE_URL}assets/photos/LA/photo4.jpg` },
+      { id: 5, src: `${import.meta.env.BASE_URL}assets/photos/LA/photo5.jpg` }
+    ]
+  },
+  {
+    id: 13,
+    location: 'Monterey',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/Monterey/cover.jpg`,
+    photos: [
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/Monterey/photo1.jpg` },
+      { id: 2, src: `${import.meta.env.BASE_URL}assets/photos/Monterey/photo2.jpg` }
+    ]
+  },
+  {
+    id: 14,
+    location: 'Portland',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/Portland/cover.jpg`,
+    photos: [
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/Portland/photo1.jpg` }
+    ]
+  },
+  {
+    id: 15,
+    location: 'Utah',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/UT/cover.jpg`,
+    photos: [
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/UT/photo1.jpg` },
+      { id: 2, src: `${import.meta.env.BASE_URL}assets/photos/UT/photo2.jpg` },
+      { id: 3, src: `${import.meta.env.BASE_URL}assets/photos/UT/photo3.jpg` }
+    ]
+  },
+  {
+    id: 16,
+    location: 'Vancouver',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/van/cover.jpg`,
+    photos: [
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/van/photo1.jpg` },
+      { id: 2, src: `${import.meta.env.BASE_URL}assets/photos/van/photo2.jpg` }
+    ]
+  },
+  {
+    id: 17,
+    location: 'Las Vegas',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/vegas/cover.jpg`,
+    photos: [
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/vegas/photo1.jpg` },
+      { id: 2, src: `${import.meta.env.BASE_URL}assets/photos/vegas/photo2.jpg` },
+      { id: 3, src: `${import.meta.env.BASE_URL}assets/photos/vegas/photo3.jpg` },
+      { id: 4, src: `${import.meta.env.BASE_URL}assets/photos/vegas/photo4.jpg` }
+    ]
+  },
+  {
+    id: 18,
+    location: 'Washington DC',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/DC/cover.jpg`,
+    photos: [
+      { id: 1, src: `${import.meta.env.BASE_URL}assets/photos/DC/photo1.jpg` },
+      { id: 2, src: `${import.meta.env.BASE_URL}assets/photos/DC/photo2.jpg` }
+    ]
+  }
 ];
 
 function AlbumViewPage() {
