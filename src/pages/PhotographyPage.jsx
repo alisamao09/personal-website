@@ -66,11 +66,12 @@ const Modal = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   display: flex;
   flex-direction: column;
-  z-index: 1000;
+  z-index: 9999;
   padding: 2rem;
+  overflow-y: auto;
 `;
 
 const ModalContent = styled.div`
@@ -82,7 +83,7 @@ const ModalContent = styled.div`
 `;
 
 const CloseButton = styled.button`
-  position: absolute;
+  position: fixed;
   top: 1rem;
   right: 1rem;
   background: none;
@@ -90,6 +91,7 @@ const CloseButton = styled.button`
   color: white;
   font-size: 2rem;
   cursor: pointer;
+  z-index: 10000;
 `;
 
 const PhotoGrid = styled.div`
@@ -143,6 +145,7 @@ function PhotographyPage() {
   const [selectedAlbum, setSelectedAlbum] = useState(null);
 
   const handleAlbumClick = (album) => {
+    alert('Album clicked!');
     console.log('Album clicked:', album);
     setSelectedAlbum(album);
   };
