@@ -112,11 +112,7 @@ const albums = [
         id: 1,
         src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo1.jpg`,
       },
-      {
-        id: 2,
-        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo2.jpg`,
-      }
-      // ... add other Arizona photos
+      // ... other Arizona photos
     ]
   },
   {
@@ -125,14 +121,30 @@ const albums = [
     date: '2021-2024',
     coverImage: `${import.meta.env.BASE_URL}assets/photos/NYC/cover.jpg`,
     photos: [
-      {
-        id: 1,
-        src: `${import.meta.env.BASE_URL}assets/photos/NYC/photo1.jpg`,
-      },
-      // ... add other NYC photos
+      // ... NYC photos
     ]
   },
-  // ... add other albums
+  {
+    id: 3,
+    location: 'San Francisco',
+    date: '2023',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/SF/cover.jpg`,
+    photos: [
+      {
+        id: 1,
+        src: `${import.meta.env.BASE_URL}assets/photos/SF/cover.jpg`,
+      },
+      {
+        id: 2,
+        src: `${import.meta.env.BASE_URL}assets/photos/SF/photo1.jpg`,
+      },
+      {
+        id: 3,
+        src: `${import.meta.env.BASE_URL}assets/photos/SF/photo2.jpg`,
+      }
+    ]
+  },
+  // ... add all other albums with the same structure
 ];
 
 function PhotographyPage() {
