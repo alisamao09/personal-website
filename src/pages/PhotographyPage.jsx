@@ -144,6 +144,13 @@ const PhotoDescription = styled.p`
   line-height: 1.5;
 `;
 
+// Add ImageWithFallback for modal photos
+const ModalImage = styled(ImageWithFallback)`
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+`;
+
 // Sample data structure
 const getAssetPath = (path) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
 
@@ -681,11 +688,9 @@ function PhotographyPage() {
               <PhotoCount>{album.photos.length} photos</PhotoCount>
             </AlbumCover>
             <AlbumInfo>
-              <AlbumTitle>{album.title}</AlbumTitle>
               <AlbumDescription>
                 📍 {album.location}<br />
-                📅 {album.date}<br />
-                {album.description}
+                📅 {album.date}
               </AlbumDescription>
             </AlbumInfo>
           </AlbumCard>
@@ -696,14 +701,20 @@ function PhotographyPage() {
         <Modal>
           <CloseButton onClick={() => setSelectedAlbum(null)}>×</CloseButton>
           <ModalContent>
-            <Title>{selectedAlbum.title}</Title>
+            <Title>{selectedAlbum.location}</Title>
             <PhotoGrid>
               {selectedAlbum.photos.map(photo => (
                 <PhotoCard key={photo.id}>
-                  <PhotoImage src={photo.src} alt={photo.caption} />
-                  <PhotoInfo>
-                    <PhotoDescription>{photo.caption}</PhotoDescription>
-                  </PhotoInfo>
+                  <ImageWithFallback 
+                    src={photo.src} 
+                    alt={photo.caption || selectedAlbum.location}
+                    loading="lazy"
+                  />
+                  {photo.caption && (
+                    <PhotoInfo>
+                      <PhotoDescription>{photo.caption}</PhotoDescription>
+                    </PhotoInfo>
+                  )}
                 </PhotoCard>
               ))}
             </PhotoGrid>
