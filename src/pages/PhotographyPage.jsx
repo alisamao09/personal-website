@@ -139,7 +139,8 @@ function PhotographyPage() {
   const navigate = useNavigate();
 
   const handleAlbumClick = (album) => {
-    navigate(`/photography/${album.location.toLowerCase()}`);
+    const formattedLocation = album.location.toLowerCase().replace(/\s+/g, '-');
+    navigate(`/photography/${formattedLocation}`);
   };
 
   return (

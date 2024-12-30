@@ -127,10 +127,15 @@ function AlbumViewPage() {
   const { location } = useParams();
   const navigate = useNavigate();
 
-  // Find the correct album based on URL
-  const album = albums.find(a => 
-    a.location.toLowerCase() === location.toLowerCase()
-  );
+  console.log('URL location:', location); // Add this for debugging
+
+  // Update the find logic to handle spaces and special characters
+  const album = albums.find(a => {
+    const normalizedAlbumLocation = a.location.toLowerCase().replace(/\s+/g, '-');
+    const normalizedUrlLocation = location.toLowerCase().replace(/\s+/g, '-');
+    console.log('Comparing:', normalizedAlbumLocation, 'with', normalizedUrlLocation); // Debug
+    return normalizedAlbumLocation === normalizedUrlLocation;
+  });
 
   if (!album) {
     return (
