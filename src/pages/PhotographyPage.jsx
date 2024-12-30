@@ -100,30 +100,45 @@ const TestButton = styled.button`
   margin-top: 1rem;
 `;
 
-// Test with one album first
-const testAlbum = {
-  id: 1,
-  location: 'Arizona',
-  date: '2024',
-  coverImage: `${import.meta.env.BASE_URL}assets/photos/AZ/cover.jpg`,
-  photos: [
-    {
-      id: 1,
-      src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo1.jpg`,
-    },
-    {
-      id: 2,
-      src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo2.jpg`,
-    }
-  ]
-};
+// Replace the testAlbum with an albums array
+const albums = [
+  {
+    id: 1,
+    location: 'Arizona',
+    date: '2024',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/AZ/cover.jpg`,
+    photos: [
+      {
+        id: 1,
+        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo1.jpg`,
+      },
+      {
+        id: 2,
+        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo2.jpg`,
+      }
+      // ... add other Arizona photos
+    ]
+  },
+  {
+    id: 2,
+    location: 'New York',
+    date: '2021-2024',
+    coverImage: `${import.meta.env.BASE_URL}assets/photos/NYC/cover.jpg`,
+    photos: [
+      {
+        id: 1,
+        src: `${import.meta.env.BASE_URL}assets/photos/NYC/photo1.jpg`,
+      },
+      // ... add other NYC photos
+    ]
+  },
+  // ... add other albums
+];
 
 function PhotographyPage() {
   const navigate = useNavigate();
 
   const handleAlbumClick = (album) => {
-    alert(`Clicking album: ${album.location}`);
-    console.log('Navigating to:', `/photography/${album.location.toLowerCase()}`);
     navigate(`/photography/${album.location.toLowerCase()}`);
   };
 
@@ -131,23 +146,23 @@ function PhotographyPage() {
     <PageContainer>
       <Title>Photography</Title>
       <AlbumGrid>
-        <AlbumCard 
-          onClick={() => {
-            console.log('Card clicked');
-            handleAlbumClick(testAlbum);
-          }}
-        >
-          <AlbumCover>
-            <AlbumImage src={testAlbum.coverImage} alt={testAlbum.location} />
-            <PhotoCount>{testAlbum.photos.length} photos</PhotoCount>
-          </AlbumCover>
-          <AlbumInfo>
-            <AlbumDescription>
-              📍 {testAlbum.location}<br />
-              📅 {testAlbum.date}
-            </AlbumDescription>
-          </AlbumInfo>
-        </AlbumCard>
+        {albums.map(album => (
+          <AlbumCard 
+            key={album.id}
+            onClick={() => handleAlbumClick(album)}
+          >
+            <AlbumCover>
+              <AlbumImage src={album.coverImage} alt={album.location} />
+              <PhotoCount>{album.photos.length} photos</PhotoCount>
+            </AlbumCover>
+            <AlbumInfo>
+              <AlbumDescription>
+                📍 {album.location}<br />
+                📅 {album.date}
+              </AlbumDescription>
+            </AlbumInfo>
+          </AlbumCard>
+        ))}
       </AlbumGrid>
     </PageContainer>
   );

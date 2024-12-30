@@ -26,52 +26,69 @@ const BackButton = styled.button`
 
 const PhotoGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
 const PhotoCard = styled.div`
   background: rgba(32, 32, 32, 0.6);
   border-radius: 12px;
   overflow: hidden;
+
+  @media (max-width: 1024px) {
+    grid-column: span 2;
+  }
+
+  @media (max-width: 768px) {
+    grid-column: 1 / -1;
+  }
 `;
 
 const PhotoImage = styled.img`
   width: 100%;
   height: 300px;
   object-fit: cover;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
+
+// Add the same albums data
+const albums = [
+  // ... copy the same albums array from PhotographyPage
+];
 
 function AlbumViewPage() {
   const { location } = useParams();
   const navigate = useNavigate();
 
-  console.log('AlbumViewPage rendered, location:', location);
+  // Find the correct album based on URL
+  const album = albums.find(a => 
+    a.location.toLowerCase() === location.toLowerCase()
+  );
 
-  // For testing, use the same album data
-  const album = {
-    location: 'Arizona',
-    photos: [
-      {
-        id: 1,
-        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo1.jpg`,
-      },
-      {
-        id: 2,
-        src: `${import.meta.env.BASE_URL}assets/photos/AZ/photo2.jpg`,
-      }
-    ]
-  };
+  if (!album) {
+    return (
+      <PageContainer>
+        <BackButton onClick={() => navigate('/photography')}>← Back to Albums</BackButton>
+        <Title>Album not found</Title>
+      </PageContainer>
+    );
+  }
 
   return (
     <PageContainer>
       <BackButton onClick={() => navigate('/photography')}>← Back to Albums</BackButton>
-      <Title>{location || album.location}</Title>
+      <Title>{album.location}</Title>
       <PhotoGrid>
         {album.photos.map(photo => (
           <PhotoCard key={photo.id}>
-            <PhotoImage src={photo.src} alt={location || album.location} />
+            <PhotoImage src={photo.src} alt={album.location} />
           </PhotoCard>
         ))}
       </PhotoGrid>
