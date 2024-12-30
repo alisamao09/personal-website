@@ -27,10 +27,12 @@ const AlbumCard = styled.div`
   padding: 1rem;
   color: white;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: rgba(32, 32, 32, 0.8);
   }
 `;
 
@@ -109,6 +111,16 @@ const PhotoImage = styled.img`
   object-fit: cover;
 `;
 
+const PhotoCount = styled.div`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+`;
+
 // Test with one album first
 const testAlbum = {
   id: 1,
@@ -130,13 +142,19 @@ const testAlbum = {
 function PhotographyPage() {
   const [selectedAlbum, setSelectedAlbum] = useState(null);
 
+  const handleAlbumClick = (album) => {
+    console.log('Album clicked:', album);
+    setSelectedAlbum(album);
+  };
+
   return (
     <PageContainer>
       <Title>Photography</Title>
       <AlbumGrid>
-        <AlbumCard onClick={() => setSelectedAlbum(testAlbum)}>
+        <AlbumCard onClick={() => handleAlbumClick(testAlbum)}>
           <AlbumCover>
             <AlbumImage src={testAlbum.coverImage} alt={testAlbum.location} />
+            <PhotoCount>{testAlbum.photos.length} photos</PhotoCount>
           </AlbumCover>
           <AlbumInfo>
             <AlbumDescription>
@@ -148,7 +166,7 @@ function PhotographyPage() {
       </AlbumGrid>
 
       {selectedAlbum && (
-        <Modal>
+        <Modal onClick={(e) => e.stopPropagation()}>
           <CloseButton onClick={() => setSelectedAlbum(null)}>×</CloseButton>
           <ModalContent>
             <Title>{selectedAlbum.location}</Title>

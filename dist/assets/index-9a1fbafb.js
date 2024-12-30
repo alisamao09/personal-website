@@ -373,6 +373,12 @@ Error generating stack: `+j.message+`
   border-radius: 12px;
   padding: 1rem;
   color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 `,AlbumCover=newStyled.div`
   position: relative;
   width: 100%;
@@ -475,4 +481,4 @@ Error generating stack: `+j.message+`
     font-size: 1.1rem;
   }
 `;function ContactPage(){return jsxRuntimeExports.jsxs(Container,{children:[jsxRuntimeExports.jsx(Title,{children:"Contact Me"}),jsxRuntimeExports.jsxs(ContactSection,{children:[jsxRuntimeExports.jsxs(ContactItem,{children:[jsxRuntimeExports.jsx(Icon,{children:jsxRuntimeExports.jsx(FaEnvelope,{})}),jsxRuntimeExports.jsxs(ContactText,{children:[jsxRuntimeExports.jsx("h3",{children:"Email"}),jsxRuntimeExports.jsx(ContactLink,{href:"mailto:alisamao0205@gmail.com",children:"alisamao0205@gmail.com"})]})]}),jsxRuntimeExports.jsxs(ContactItem,{children:[jsxRuntimeExports.jsx(Icon,{children:jsxRuntimeExports.jsx(FaPhone,{})}),jsxRuntimeExports.jsxs(ContactText,{children:[jsxRuntimeExports.jsx("h3",{children:"Phone"}),jsxRuntimeExports.jsx(ContactLink,{href:"tel:+17343538253",children:"(734) 353-8253"})]})]}),jsxRuntimeExports.jsxs(ContactItem,{children:[jsxRuntimeExports.jsx(Icon,{children:jsxRuntimeExports.jsx(FaLinkedin,{})}),jsxRuntimeExports.jsxs(ContactText,{children:[jsxRuntimeExports.jsx("h3",{children:"LinkedIn"}),jsxRuntimeExports.jsx(ContactLink,{href:"https://www.linkedin.com/in/jiangyue-mao-522145199/",target:"_blank",rel:"noopener noreferrer",children:"Jiangyue Mao"})]})]}),jsxRuntimeExports.jsxs(ContactItem,{children:[jsxRuntimeExports.jsx(Icon,{children:jsxRuntimeExports.jsx(FaGithub,{})}),jsxRuntimeExports.jsxs(ContactText,{children:[jsxRuntimeExports.jsx("h3",{children:"GitHub"}),jsxRuntimeExports.jsx(ContactLink,{href:"https://github.com/alisamao09",target:"_blank",rel:"noopener noreferrer",children:"alisamao09"})]})]})]})]})}function AppRoutes(){return jsxRuntimeExports.jsxs(Routes,{children:[jsxRuntimeExports.jsx(Route,{path:"/",element:jsxRuntimeExports.jsx(HomePage,{})}),jsxRuntimeExports.jsxs(Route,{element:jsxRuntimeExports.jsx(Layout,{}),children:[jsxRuntimeExports.jsx(Route,{path:"/resume",element:jsxRuntimeExports.jsx(ResumePage,{})}),jsxRuntimeExports.jsx(Route,{path:"/portfolio",element:jsxRuntimeExports.jsx(PortfolioPage,{})}),jsxRuntimeExports.jsx(Route,{path:"/photography",element:jsxRuntimeExports.jsx(PhotographyPage,{})}),jsxRuntimeExports.jsx(Route,{path:"/contact",element:jsxRuntimeExports.jsx(ContactPage,{})})]})]})}function App(){return console.log("App is rendering"),jsxRuntimeExports.jsx(HashRouter,{children:jsxRuntimeExports.jsxs(ThemeProvider,{theme,children:[jsxRuntimeExports.jsx(GlobalStyles,{}),jsxRuntimeExports.jsx(AppRoutes,{})]})})}console.log("main.jsx is executing");client.createRoot(document.getElementById("root")).render(jsxRuntimeExports.jsx(React.StrictMode,{children:jsxRuntimeExports.jsx(App,{})}));
-//# sourceMappingURL=index-e70efe06.js.map
+//# sourceMappingURL=index-9a1fbafb.js.map
