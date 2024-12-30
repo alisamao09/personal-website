@@ -26,6 +26,12 @@ const AlbumCard = styled.div`
   border-radius: 12px;
   padding: 1rem;
   color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 `;
 
 const AlbumCover = styled.div`
