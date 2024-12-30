@@ -8,12 +8,14 @@ const BackgroundContainer = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${props => props.theme.colors.background};
+  width: 100vw;
+  height: 100vh;
+  background-color: #121212;
   background-image: linear-gradient(
     rgba(18, 18, 18, 0.7),
     rgba(18, 18, 18, 0.7)
   ),
-  url('/assets/background.jpg');
+  url('${import.meta.env.BASE_URL}assets/background.jpg');
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
