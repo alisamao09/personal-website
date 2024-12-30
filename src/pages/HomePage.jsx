@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
+import backgroundImage from '../assets/background.jpg';
 
 const BackgroundContainer = styled.div`
   position: fixed;
@@ -15,7 +16,7 @@ const BackgroundContainer = styled.div`
     rgba(18, 18, 18, 0.7),
     rgba(18, 18, 18, 0.7)
   ),
-  url(${process.env.PUBLIC_URL}/assets/background.jpg);
+  url(${backgroundImage});
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
