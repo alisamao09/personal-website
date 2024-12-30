@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const PageContainer = styled.div`
   padding: 2rem;
@@ -60,40 +61,6 @@ const AlbumDescription = styled.p`
   line-height: 1.5;
 `;
 
-const Modal = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.95);
-  display: flex;
-  flex-direction: column;
-  z-index: 9999;
-  padding: 2rem;
-  overflow-y: auto;
-`;
-
-const ModalContent = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  flex: 1;
-  overflow-y: auto;
-`;
-
-const CloseButton = styled.button`
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 10000;
-`;
-
 const PhotoGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -152,19 +119,17 @@ const testAlbum = {
 };
 
 function PhotographyPage() {
-  const [selectedAlbum, setSelectedAlbum] = useState(null);
+  const navigate = useNavigate();
 
   const handleAlbumClick = (album) => {
-    alert('Album clicked!');
-    console.log('Album clicked:', album);
-    setSelectedAlbum(album);
+    navigate(`/photography/${album.location.toLowerCase()}`);
   };
 
   return (
     <PageContainer>
       <Title>Photography</Title>
       <AlbumGrid>
-        <AlbumCard>
+        <AlbumCard onClick={() => handleAlbumClick(testAlbum)}>
           <AlbumCover>
             <AlbumImage src={testAlbum.coverImage} alt={testAlbum.location} />
             <PhotoCount>{testAlbum.photos.length} photos</PhotoCount>
@@ -175,27 +140,8 @@ function PhotographyPage() {
               📅 {testAlbum.date}
             </AlbumDescription>
           </AlbumInfo>
-          <TestButton onClick={() => handleAlbumClick(testAlbum)}>
-            View Album
-          </TestButton>
         </AlbumCard>
       </AlbumGrid>
-
-      {selectedAlbum && (
-        <Modal>
-          <CloseButton onClick={() => setSelectedAlbum(null)}>×</CloseButton>
-          <ModalContent>
-            <Title>{selectedAlbum.location}</Title>
-            <PhotoGrid>
-              {selectedAlbum.photos.map(photo => (
-                <PhotoCard key={photo.id}>
-                  <PhotoImage src={photo.src} alt={selectedAlbum.location} />
-                </PhotoCard>
-              ))}
-            </PhotoGrid>
-          </ModalContent>
-        </Modal>
-      )}
     </PageContainer>
   );
 }

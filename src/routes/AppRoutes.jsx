@@ -5,6 +5,7 @@ import ResumePage from '../pages/ResumePage';
 import PortfolioPage from '../pages/PortfolioPage';
 import PhotographyPage from '../pages/PhotographyPage';
 import ContactPage from '../pages/ContactPage';
+import AlbumViewPage from '../pages/AlbumViewPage';
 
 function AppRoutes() {
   return (
@@ -14,6 +15,7 @@ function AppRoutes() {
         <Route path="/resume" element={<ResumePage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/photography" element={<PhotographyPage />} />
+        <Route path="/photography/:location" element={<AlbumViewPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Route>
     </Routes>
