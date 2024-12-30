@@ -15,7 +15,7 @@ const BackgroundContainer = styled.div`
     rgba(18, 18, 18, 0.7),
     rgba(18, 18, 18, 0.7)
   ),
-  url('https://alisamao09.github.io/personal-website/assets/background.jpg');
+  url(${process.env.PUBLIC_URL}/assets/background.jpg);
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
