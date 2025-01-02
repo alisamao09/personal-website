@@ -11,6 +11,7 @@ const BackgroundContainer = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #121212;
+  z-index: -1;
   &:before {
     content: '';
     position: absolute;
@@ -22,7 +23,6 @@ const BackgroundContainer = styled.div`
     background-size: cover;
     background-position: center 40%;
     opacity: 0.3;
-    z-index: -1;
   }
 `;
 
@@ -30,6 +30,8 @@ const PageWrapper = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
 `;
 
 const MainContent = styled.div`
