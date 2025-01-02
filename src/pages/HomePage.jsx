@@ -11,19 +11,15 @@ const BackgroundContainer = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #121212;
+  background-image: linear-gradient(
+    rgba(18, 18, 18, 0.7),
+    rgba(18, 18, 18, 0.7)
+  ),
+  url('${import.meta.env.BASE_URL}assets/background.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
   z-index: -1;
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('${import.meta.env.BASE_URL}assets/background.jpg');
-    background-size: cover;
-    background-position: center 40%;
-    opacity: 0.3;
-  }
 `;
 
 const PageWrapper = styled.div`
@@ -31,7 +27,8 @@ const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  background: transparent;
 `;
 
 const MainContent = styled.div`
@@ -41,6 +38,8 @@ const MainContent = styled.div`
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  position: relative;
+  z-index: 3;
 `;
 
 const ProfileImage = styled.div`
@@ -95,7 +94,7 @@ const Description = styled.div`
 function HomePage() {
   console.log('HomePage is rendering');
   return (
-    <>
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
       <BackgroundContainer />
       <PageWrapper>
         <Navbar />
@@ -118,7 +117,7 @@ function HomePage() {
         </MainContent>
         <Footer />
       </PageWrapper>
-    </>
+    </div>
   );
 }
 
