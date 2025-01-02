@@ -168,7 +168,7 @@ Error generating stack: `+j.message+`
     rgba(18, 18, 18, 0.8),
     rgba(18, 18, 18, 0.8)
   ),
-  url(${"/personal-website/assets/background.jpg"}) center/cover no-repeat;
+  url('https://alisamao09.github.io/personal-website/assets/background.jpg') center/cover no-repeat;
   z-index: -1;
 `,PageWrapper=newStyled.div`
   min-height: 100vh;
