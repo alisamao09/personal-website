@@ -164,12 +164,26 @@ Error generating stack: `+j.message+`
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(
-    rgba(18, 18, 18, 0.8),
-    rgba(18, 18, 18, 0.8)
-  ),
-  url('https://alisamao09.github.io/personal-website/assets/background.jpg') center/cover no-repeat;
-  z-index: -1;
+  background-color: #121212;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      rgba(18, 18, 18, 0.8),
+      rgba(18, 18, 18, 0.8)
+    ),
+    url('${"/personal-website/"}assets/photos/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: -1;
+  }
 `,PageWrapper=newStyled.div`
   min-height: 100vh;
   display: flex;
