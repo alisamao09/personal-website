@@ -165,15 +165,18 @@ Error generating stack: `+j.message+`
   width: 100vw;
   height: 100vh;
   background-color: #121212;
-  background-image: linear-gradient(
-    rgba(18, 18, 18, 0.7),
-    rgba(18, 18, 18, 0.7)
-  ),
-  url('${"/personal-website/"}assets/background.jpg');
-  background-size: cover;
-  background-position: center 40%;
-  background-repeat: no-repeat;
-  z-index: -1;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/personal-website/assets/background.jpg');
+    background-size: cover;
+    background-position: center 40%;
+    opacity: 0.3;
+  }
 `,PageWrapper=newStyled.div`
   min-height: 100vh;
   display: flex;
