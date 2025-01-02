@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 
-const BackgroundContainer = styled.div`
+const BackgroundImage = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -10,26 +10,23 @@ const BackgroundContainer = styled.div`
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #121212;
+  background-image: url('${import.meta.env.BASE_URL}assets/photos/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+`;
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      rgba(18, 18, 18, 0.8),
-      rgba(18, 18, 18, 0.8)
-    ),
-    url('${import.meta.env.BASE_URL}assets/photos/background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 1;
-    z-index: -1;
-  }
+const BackgroundOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(18, 18, 18, 0.8);
+  z-index: -1;
 `;
 
 const PageWrapper = styled.div`
@@ -101,7 +98,8 @@ const Description = styled.div`
 function HomePage() {
   return (
     <>
-      <BackgroundContainer />
+      <BackgroundImage />
+      <BackgroundOverlay />
       <PageWrapper>
         <Navbar />
         <MainContent>
