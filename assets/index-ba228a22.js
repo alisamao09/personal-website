@@ -172,10 +172,11 @@ Error generating stack: `+j.message+`
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/personal-website/assets/background.jpg');
+    background-image: url('https://alisamao09.github.io/personal-website/assets/background.jpg');
     background-size: cover;
     background-position: center 40%;
     opacity: 0.3;
+    z-index: -1;
   }
 `,PageWrapper=newStyled.div`
   min-height: 100vh;
