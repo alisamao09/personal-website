@@ -14,7 +14,7 @@ const BackgroundContainer = styled.div`
     rgba(18, 18, 18, 0.8),
     rgba(18, 18, 18, 0.8)
   ),
-  url(${import.meta.env.BASE_URL + 'assets/background.jpg'}) center/cover no-repeat;
+  url('https://alisamao09.github.io/personal-website/assets/background.jpg') center/cover no-repeat;
   z-index: -1;
 `;
 

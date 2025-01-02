@@ -164,23 +164,18 @@ Error generating stack: `+j.message+`
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #121212;
-  background-image: linear-gradient(
-    rgba(18, 18, 18, 0.7),
-    rgba(18, 18, 18, 0.7)
+  background: linear-gradient(
+    rgba(18, 18, 18, 0.8),
+    rgba(18, 18, 18, 0.8)
   ),
-  url('${"/personal-website/"}assets/background.jpg');
-  background-size: cover;
-  background-position: center 40%;
-  background-repeat: no-repeat;
+  url(${"/personal-website/assets/background.jpg"}) center/cover no-repeat;
   z-index: -1;
 `,PageWrapper=newStyled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
-  z-index: 2;
-  background: transparent;
+  z-index: 1;
 `,MainContent=newStyled.div`
   flex: 1;
   display: flex;
@@ -188,8 +183,6 @@ Error generating stack: `+j.message+`
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  position: relative;
-  z-index: 3;
 `,ProfileImage=newStyled.div`
   width: 200px;
   height: 200px;
@@ -229,7 +222,7 @@ Error generating stack: `+j.message+`
       margin-bottom: 0;
     }
   }
-`;function HomePage(){return console.log("HomePage is rendering"),jsxRuntimeExports.jsxs("div",{style:{position:"relative",minHeight:"100vh"},children:[jsxRuntimeExports.jsx(BackgroundContainer,{}),jsxRuntimeExports.jsxs(PageWrapper,{children:[jsxRuntimeExports.jsx(Navbar,{}),jsxRuntimeExports.jsxs(MainContent,{children:[jsxRuntimeExports.jsx(ProfileImage,{children:jsxRuntimeExports.jsx(Image$1,{src:"/personal-website/assets/profile.jpg",alt:"Jiangyue Mao",loading:"eager"})}),jsxRuntimeExports.jsx(Title$4,{children:"Hi, welcome to my world!"}),jsxRuntimeExports.jsx(Subtitle,{children:"Engineer. Designer. Innovator."}),jsxRuntimeExports.jsx(Description,{children:jsxRuntimeExports.jsx("p",{children:"I'm Jiangyue Mao, a passionate engineer with a proven track record of delivering scalable solutions in fast-paced environments. With an MSc in Data Science from the University of Michigan and a BA from University of Toronto, I thrive at the intersection of engineering, design, art, and data."})})]}),jsxRuntimeExports.jsx(Footer,{})]})]})}const Container$2=newStyled.div`
+`;function HomePage(){return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment,{children:[jsxRuntimeExports.jsx(BackgroundContainer,{}),jsxRuntimeExports.jsxs(PageWrapper,{children:[jsxRuntimeExports.jsx(Navbar,{}),jsxRuntimeExports.jsxs(MainContent,{children:[jsxRuntimeExports.jsx(ProfileImage,{children:jsxRuntimeExports.jsx(Image$1,{src:"/personal-website/assets/profile.jpg",alt:"Jiangyue Mao",loading:"eager"})}),jsxRuntimeExports.jsx(Title$4,{children:"Hi, welcome to my world!"}),jsxRuntimeExports.jsx(Subtitle,{children:"Engineer. Designer. Innovator."}),jsxRuntimeExports.jsx(Description,{children:jsxRuntimeExports.jsx("p",{children:"I'm Jiangyue Mao, a passionate engineer with a proven track record of delivering scalable solutions in fast-paced environments. With an MSc in Data Science from the University of Michigan and a BA from University of Toronto, I thrive at the intersection of engineering, design, art, and data."})})]}),jsxRuntimeExports.jsx(Footer,{})]})]})}const Container$2=newStyled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
